@@ -22,3 +22,9 @@ examples/test[0-9]
 Makefile
 tclap.pc
 tests/tmp.out
+*.exe
+out/
+*.sh.log
+*.sh.trs
+test-suite.log
+test-driver
