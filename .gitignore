@@ -28,3 +28,4 @@ out/
 *.sh.trs
 test-suite.log
 test-driver
+.vscode/
