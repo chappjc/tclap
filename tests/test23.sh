@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # failure
-../examples/test5 -d junk -c fdas > tmp.out 2>&1
+../examples/test5 -d junk -c fdas 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test23.out; then
 	exit 0

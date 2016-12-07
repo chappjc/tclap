@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # failure
-../examples/test3  --stringTest bbb homer marge bart -- -hv two > tmp.out 2>&1
+../examples/test3  --stringTest bbb homer marge bart -- -hv two 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test15.out; then
 	exit 0

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # failure
-../examples/test5 --aaa dilbert -b asdf -c fdas > tmp.out 2>&1
+../examples/test5 --aaa dilbert -b asdf -c fdas 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test24.out; then
 	exit 0

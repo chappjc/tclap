@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # success test hex
-../examples/test19 -i 0xA > tmp.out 2>&1
+../examples/test19 -i 0xA 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test71.out; then
 	exit 0

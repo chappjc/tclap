@@ -5,7 +5,7 @@
 # handling doesn't get fooled if the delimiter
 # is in the string
 # success  
-../examples/test13 > tmp.out 2>&1
+../examples/test13 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test68.out; then
 	exit 0

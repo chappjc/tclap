@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # failure
-../examples/test8 -i=9a -i=1 -s=asdf asdf asdf > tmp.out 2>&1
+../examples/test8 -i=9a -i=1 -s=asdf asdf asdf 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test52.out; then
 	exit 0

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # failure
-../examples/test9 -VVV -N --noise -rr > tmp.out 2>&1
+../examples/test9 -VVV -N --noise -rr 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test60.out; then
 	exit 0

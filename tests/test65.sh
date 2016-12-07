@@ -4,7 +4,7 @@
 # missing when no arguments are specified
 # failure  
 ../examples/test12 -v "1 2 3" -v "4 5 6" -v "7 8 9" -v "-1 0.2 0.4" \
-    > tmp.out 2>&1
+    2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test65.out; then
 	exit 0

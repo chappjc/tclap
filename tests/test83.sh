@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # success
-../examples/test24 > tmp.out 2>&1
+../examples/test24 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test83.out; then
 	exit 0

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # success (everything but -n mike should be ignored)
-../examples/test22 asdf -n mike asdf fds xxx > tmp.out 2>&1
+../examples/test22 asdf -n mike asdf fds xxx 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test80.out; then
 	exit 0

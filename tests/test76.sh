@@ -2,7 +2,7 @@
 
 # failure  validates that the correct error message
 # is displayed for XOR'd args
-../examples/test20 -ba > tmp.out 2>&1
+../examples/test20 -ba 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test76.out; then
 	exit 0

@@ -2,7 +2,7 @@
 
 # Checks that parsing exceptions are properly
 # propagated to the caller.
-../examples/test18 --bob > tmp.out 2>&1
+../examples/test18 --bob 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test69.out; then
 	exit 0

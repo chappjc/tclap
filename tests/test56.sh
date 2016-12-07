@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # success
-../examples/test2 -i 1 - -s fdsa one two > tmp.out 2>&1
+../examples/test2 -i 1 - -s fdsa one two 2>&1 | sed $'s/\r$//' > tmp.out
 
 if cmp -s tmp.out $srcdir/test56.out; then
 	exit 0
